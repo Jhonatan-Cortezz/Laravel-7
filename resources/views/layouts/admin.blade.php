@@ -203,7 +203,7 @@
           {{-- Categorias    --}}
           <li class="nav-item has-treeview">
             <a href="#" class="nav-link">
-              <i class="nav-icon fas fa-users"></i>
+              <i class="nav-icon fas fa-list-alt"></i>
               <p>
                 Categorias 
                 <i class="right fas fa-angle-left"></i>
@@ -218,7 +218,7 @@
               </li>
               <li class="nav-item">
                 <a href="{{route('categories.index')}}" class="nav-link">
-                  <i class="far fa-circle nav-icon"></i>
+                  <i class="fas fa-list-ul nav-icon"></i>
                   <p>Lista</p>
                 </a>
               </li>
