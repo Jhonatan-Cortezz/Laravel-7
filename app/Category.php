@@ -13,4 +13,9 @@ class Category extends Model
     ];
     protected $dates = ['deleted_at'];
     protected $hidden= ['created_at', 'updated_at'];
+
+    // establecer la relacion a la tabla subcategoria
+    public function subcategories(){
+        return $this->hasMany(Subcategory::class);
+    }
 }

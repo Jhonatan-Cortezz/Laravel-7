@@ -224,30 +224,30 @@
               </li>
             </ul>
           </li>
-          {{-- Programas   --}}
-          {{--  <li class="nav-item has-treeview">
+          {{-- Subcategorias   --}}
+           <li class="nav-item has-treeview">
             <a href="#" class="nav-link">
-              <i class="nav-icon fas fa-hourglass-start"></i>
+              <i class="fas fa-stream"></i>
               <p>
-                Programas 
+                Subcategorias 
                 <i class="right fas fa-angle-left"></i>
               </p>
             </a>
             <ul class="nav nav-treeview">
               <li class="nav-item">
-                <a href="{{route('programs.create')}}" class="nav-link">
-                  <i class="far fa-circle nav-icon"></i>
+                <a href="{{route('subcategories.create')}}" class="nav-link">
+                  <i class="far fas fa-plus nav-icon"></i>
                   <p>Crear</p>
                 </a>
               </li>
               <li class="nav-item">
-                <a href="{{route('programs.index')}}" class="nav-link">
-                  <i class="far fa-circle nav-icon"></i>
+                <a href="{{route('subcategories.index')}}" class="nav-link">
+                  <i class="fas fa-list-ul nav-icon"></i>
                   <p>Lista</p>
                 </a>
               </li>
             </ul>
-          </li>  --}}
+          </li> 
            {{-- Videos  --}}
            {{--  <li class="nav-item has-treeview">
             <a href="#" class="nav-link">
