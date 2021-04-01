@@ -47,16 +47,16 @@
               <td>
                 <a href="{{route('categories.show',$category)}}">{{$category->name}}</a>
               </td>
-              <td>{{$category->module}}</td>
+              <td>{{getModulesArray()[$category->module]}}</td>
               <td style="width: 50px;">
                 {!! Form::open(['route'=>['categories.destroy',$category], 'method'=>'DELETE']) !!}
 
-                <a class="jsgrid-button jsgrid-edit-button" href="{{route('categories.edit', $category)}}" title="Editar">
-                    <i class="far fa-edit"></i>
+                <a href="{{route('categories.edit', $category)}}" title="Editar">
+                  <i class="fas fa-pen-square"></i>
                 </a>
                 
-                <button class="jsgrid-button jsgrid-delete-button unstyled-button" type="submit" title="Eliminar">
-                    <i class="far fa-trash-alt"></i>
+                <button class="border-0 bg-transparent" type="submit" title="Eliminar">
+                  <i class="fas fa-trash-alt"></i>
                 </button>
 
                 {!! Form::close() !!}

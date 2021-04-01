@@ -46,14 +46,27 @@ class CategoryController extends Controller
         //
     }
 
-    public function edit(Category $category)
+    public function edit($id)
     {
-        //
+        $category = Category::where('id', $id)->firstOrFail();
+        return view('admin.categories.edit', compact('category'));
     }
 
-    public function update(Request $request, Category $category)
+    public function update(Request $request, $id)
     {
-        //
+        $request->validate([
+            'name'=>'required|max:20',
+            'module'=>'required|max:20'
+        ]);
+
+        $category = Category::findOrFail($id);
+        $category->name = e($request->name);
+        $category->module = e($request->module);
+        $category->slug = Str::slug($request->name);
+
+        $category->save();
+
+        return redirect()->route('categories.index')->with('info', 'Actualizado correctamente');
     }
 
     public function destroy(Category $category)
