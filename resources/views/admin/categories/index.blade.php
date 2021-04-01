@@ -26,16 +26,16 @@
     <table class="table table-striped projects">
         <thead>
           <tr>
-            <th style="width: 1%">
+            <th style="width: 5%">
               ID
             </th>
-            <th style="width: 20%">
+            <th style="width: 50%">
               Nombre
             </th>
             <th style="width: 30%">
               Modulo
             </th>
-            <th>
+            <th style="width: 15%">
               Acciones
             </th>
           </tr>
