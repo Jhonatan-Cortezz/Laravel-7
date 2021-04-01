@@ -56,7 +56,7 @@
                 </a>
                 
                 <button class="border-0 bg-transparent" type="submit" title="Eliminar">
-                  <i class="fas fa-trash-alt"></i>
+                  <i class="fas fa-trash-alt text-red"></i>
                 </button>
 
                 {!! Form::close() !!}
