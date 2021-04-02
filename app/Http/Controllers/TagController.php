@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Tag;
 use Illuminate\Http\Request;
+use App\Category;
 use Illuminate\Support\Str;
 
 class TagController extends Controller
@@ -18,21 +19,21 @@ class TagController extends Controller
     public function create()
     {
         //
-        return view('admin.tags.create');
+        $categories = Category::pluck('name', 'id');
+        return view('admin.tags.create', compact('categories'));
     }
 
     public function store(Request $request)
     {
         $request->validate([
             'name'=>'required|unique:tags|max:20',
-            'module'=>'required|max:20'
         ]);
 
         $tag = new Tag;
 
         // generate slug
         $tag->name = e($request->name);
-        $tag->module = e($request->module);
+        $tag->category_id = e($request->category_id);
         $tag->slug = Str::slug($request->name);
 
         $tag->save();
@@ -48,19 +49,19 @@ class TagController extends Controller
     public function edit($id)
     {
         $tag = Tag::where('id', $id)->firstOrFail();
-        return view('admin.tags.edit', compact('tag'));
+        $categories = Category::pluck('name', 'id');
+        return view('admin.tags.edit', compact('tag', 'categories'));
     }
 
     public function update(Request $request, $id)
     {
         $request->validate([
             'name'=>'required|max:20',
-            'module'=>'required|max:20'
         ]);
 
         $tag = Tag::findOrFail($id);
         $tag->name = e($request->name);
-        $tag->module = e($request->module);
+        $tag->category_id = e($request->category_id);
         $tag->slug = Str::slug($request->name);
 
         $tag->save();
